@@ -1,4 +1,4 @@
-# Java Inheritance situations
+# Java Inheritance Situations
 
 This repository contains Java programs that demonstrate different types of inheritance using real-world examples.
 
@@ -30,7 +30,7 @@ Student
 
 * `Person` is the parent class.
 * `Student` is the child class.
-* `Student` inherits common information and behavior from `Person`.
+* `Student` inherits the properties and methods of `Person`.
 
 ## Classes and Responsibilities
 
@@ -99,7 +99,7 @@ In hierarchical inheritance, multiple child classes inherit from the same parent
 
 * `Staff` is the parent class.
 * `Doctor` and `Nurse` are child classes.
-* Both child classes inherit common information and behavior from `Staff`.
+* Both child classes inherit common properties and methods from `Staff`.
 
 ## Classes and Responsibilities
 
@@ -245,7 +245,7 @@ Contains:
 * `fileSize`
 * `displayEBookDetails()` method
 
-It inherits from `Book`, so it can access the inherited behavior from both `Book` and `LibraryItem`.
+It inherits from `Book` and therefore also gets the inherited behavior from `LibraryItem`.
 
 ### LibraryDemo.java
 
@@ -285,7 +285,6 @@ java LibraryDemo
 * Java
 * Object-Oriented Programming
 * Inheritance
-* Interfaces
 * Scanner for User Input
 
 ---
@@ -316,15 +315,12 @@ Multiple child classes inherit from the same parent class.
 
 A combination of different inheritance structures.
 
-## Multiple Inheritance using Interfaces
-
-A class implements multiple interfaces.
-
 ```text
-Interface 1     Interface 2
-      \            /
-       \          /
-          Class
+             Parent
+             /    \
+          Child1  Child2
+            |
+          Child3
 ```
 
 ---
@@ -350,7 +346,7 @@ This makes the programs interactive instead of using fixed values.
 
 Open the terminal inside the required folder.
 
-For example:
+For the school program:
 
 ```bash
 cd 01_Single_Inheritance
@@ -373,6 +369,9 @@ cd 03_Hybrid_Inheritance
 javac *.java
 java LibraryDemo
 ```
+
+---
+
 # Learning Outcome
 
 These programs demonstrate how Java inheritance can be used to:
@@ -381,7 +380,6 @@ These programs demonstrate how Java inheritance can be used to:
 * Create specialized child classes.
 * Organize related classes.
 * Implement different inheritance structures.
-* Use interfaces to achieve multiple inheritance.
 * Take dynamic input using `Scanner`.
 * Understand the basics of Object-Oriented Programming.
 
@@ -405,13 +403,12 @@ java-inheritance-situations/
 │   ├── Nurse.java
 │   └── HospitalDemo.java
 │
-├── 03_Hybrid_Inheritance/
-   ├── LibraryItem.java
-   ├── Book.java
-   ├── Magazine.java
-   ├── EBook.java
-   └── LibraryDemo.java
-
+└── 03_Hybrid_Inheritance/
+    ├── LibraryItem.java
+    ├── Book.java
+    ├── Magazine.java
+    ├── EBook.java
+    └── LibraryDemo.java
 ```
 
 # Author
