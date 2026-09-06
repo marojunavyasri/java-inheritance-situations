@@ -1,60 +1,78 @@
-# java-inheritance-situations
-This repository contains three simple Java programs demonstrating different types of inheritance using real-world examples.
+# Java Inheritance Examples
 
-## 📚 Programs Included
+This repository contains Java programs that demonstrate different types of inheritance using real-world examples.
 
-| Level     | Situation         | Inheritance Type         |
-| --------- | ----------------- | ------------------------ |
-| 🟢 Simple | School Management | Single Inheritance       |
-| 🟡 Medium | Hospital Staff    | Hierarchical Inheritance |
-| 🔴 High   | Library System    | Hybrid Inheritance       |
+The programs included are:
+
+1. **School Management – Single Inheritance**
+2. **Hospital Staff – Hierarchical Inheritance**
+3. **Library System – Hybrid Inheritance**
+
+These examples help understand how inheritance allows one class to reuse the properties and methods of another class.
 
 ---
 
-## 🟢 1. Simple Level – School Management
+# 1. School Management – Single Inheritance
 
-### Inheritance Type
+## Description
 
-**Single Inheritance**
+This program demonstrates **Single Inheritance** using a school management example.
 
-### Structure
+In single inheritance, one child class inherits from one parent class.
+
+### Class Structure
 
 ```text
 Person
-  ↓
+   ↓
 Student
 ```
 
-### Classes
+* `Person` is the parent class.
+* `Student` is the child class.
+* `Student` inherits common information and behavior from `Person`.
 
-* `Person` – Parent class
-* `Student` – Child class
-* `SchoolDemo` – Main class
+## Classes and Responsibilities
 
-### Description
-
-The `Student` class inherits common information and behavior from the `Person` class.
+### Person.java
 
 The `Person` class contains:
 
-* Name
-* Age
+* `name`
+* `age`
+* `displayPersonDetails()` method
+
+### Student.java
 
 The `Student` class contains:
 
-* Roll Number
-* Course
+* `rollNo`
+* `course`
+* `displayStudentDetails()` method
 
-### Files
+It also inherits the properties and methods of `Person`.
+
+### SchoolDemo.java
+
+This is the main class.
+
+It:
+
+1. Creates a `Student` object.
+2. Takes student information using `Scanner`.
+3. Sets the values using setter methods.
+4. Displays the details.
+
+## Files
 
 ```text
-01_Simple_Single_Inheritance/
+01_Single_Inheritance/
 ├── Person.java
 ├── Student.java
 └── SchoolDemo.java
 ```
 
-### Run
+## Run the Program
 
 ```bash
 javac *.java
@@ -63,55 +81,76 @@ java SchoolDemo
 
 ---
 
-## 🟡 2. Medium Level – Hospital Staff
+# 2. Hospital Staff – Hierarchical Inheritance
 
-### Inheritance Type
+## Description
 
-**Hierarchical Inheritance**
+This program demonstrates **Hierarchical Inheritance** using a hospital staff example.
 
-### Structure
+In hierarchical inheritance, multiple child classes inherit from the same parent class.
+
+### Class Structure
 
 ```text
-       Staff
-       /   \
-   Doctor  Nurse
+          Staff
+         /     \
+    Doctor     Nurse
 ```
 
-### Classes
+* `Staff` is the parent class.
+* `Doctor` and `Nurse` are child classes.
+* Both child classes inherit common information and behavior from `Staff`.
 
-* `Staff` – Parent class
-* `Doctor` – Child class
-* `Nurse` – Child class
-* `HospitalDemo` – Main class
+## Classes and Responsibilities
 
-### Description
-
-Both `Doctor` and `Nurse` inherit common information and behavior from the `Staff` class.
+### Staff.java
 
 The `Staff` class contains:
 
-* Name
-* Staff ID
+* `name`
+* `staffId`
+* `displayStaffDetails()` method
+
+### Doctor.java
 
 The `Doctor` class contains:
 
-* Specialization
+* `specialization`
+* `displayDoctorDetails()` method
+
+It inherits common staff details from `Staff`.
+
+### Nurse.java
 
 The `Nurse` class contains:
 
-* Ward
+* `ward`
+* `displayNurseDetails()` method
 
-### Files
+It also inherits common staff details from `Staff`.
+
+### HospitalDemo.java
+
+This is the main class.
+
+It:
+
+1. Creates a `Doctor` object.
+2. Creates a `Nurse` object.
+3. Takes their details using `Scanner`.
+4. Displays their common and specific information.
+
+## Files
 
 ```text
-06_Medium_Hierarchical_Inheritance/
+02_Hierarchical_Inheritance/
 ├── Staff.java
 ├── Doctor.java
 ├── Nurse.java
 └── HospitalDemo.java
 ```
 
-### Run
+## Run the Program
 
 ```bash
 javac *.java
@@ -120,59 +159,109 @@ java HospitalDemo
 
 ---
 
-## 🔴 3. High Level – Library System
+# 3. Library System – Hybrid Inheritance
 
-### Inheritance Type
+## Description
 
-**Hybrid Inheritance**
+This program demonstrates **Hybrid Inheritance** using a library system.
 
-### Structure
+Hybrid inheritance combines more than one type of inheritance structure.
+
+In this example, **Hierarchical Inheritance** and **Multilevel Inheritance** are combined.
+
+### Class Structure
 
 ```text
-          LibraryItem
-          /        \
-       Book      Magazine
-        ↓
-      EBook
+             LibraryItem
+             /         \
+          Book       Magazine
+           |
+         EBook
 ```
 
-### Classes
+### Explanation
 
-* `LibraryItem` – Base class
-* `Book` – Child class
-* `Magazine` – Child class
-* `EBook` – Child class of `Book`
-* `LibraryDemo` – Main class
+* `LibraryItem` is the base class.
+* `Book` inherits from `LibraryItem`.
+* `Magazine` also inherits from `LibraryItem`.
+* `EBook` inherits from `Book`.
 
-### Description
+Therefore, the program combines:
 
-The Library System combines **Hierarchical and Multilevel Inheritance**.
-
-`Book` and `Magazine` inherit from `LibraryItem`.
-
-`EBook` inherits from `Book`.
-
-The `LibraryItem` class contains:
-
-* Title
-* Item ID
-
-The `Book` class contains:
-
-* Author
-
-The `Magazine` class contains:
-
-* Issue Number
-
-The `EBook` class contains:
-
-* File Size
-
-### Files
+**Hierarchical Inheritance:**
 
 ```text
-05_High_Hybrid_Inheritance/
+LibraryItem
+   /    \
+ Book  Magazine
+```
+
+and
+
+**Multilevel Inheritance:**
+
+```text
+LibraryItem
+    ↓
+   Book
+    ↓
+  EBook
+```
+
+Together they form a hybrid inheritance structure.
+
+## Classes and Responsibilities
+
+### LibraryItem.java
+
+Contains:
+
+* `title`
+* `itemId`
+* `displayItemDetails()` method
+
+### Book.java
+
+Contains:
+
+* `author`
+* `displayBookDetails()` method
+
+It inherits details from `LibraryItem`.
+
+### Magazine.java
+
+Contains:
+
+* `issueNumber`
+* `displayMagazineDetails()` method
+
+It also inherits details from `LibraryItem`.
+
+### EBook.java
+
+Contains:
+
+* `fileSize`
+* `displayEBookDetails()` method
+
+It inherits from `Book`, so it can access the inherited behavior from both `Book` and `LibraryItem`.
+
+### LibraryDemo.java
+
+This is the main class.
+
+It:
+
+1. Creates an `EBook` object.
+2. Creates a `Magazine` object.
+3. Takes information using `Scanner`.
+4. Displays all the details.
+
+## Files
+
+```text
+03_Hybrid_Inheritance/
 ├── LibraryItem.java
 ├── Book.java
 ├── Magazine.java
@@ -180,62 +269,216 @@ The `EBook` class contains:
 └── LibraryDemo.java
 ```
 
-### Run
+## Run the Program
 
 ```bash
 javac *.java
 java LibraryDemo
 ```
 
-> **Important:** Run `LibraryDemo.java`, not `Book.java`, `EBook.java`, or `Magazine.java`, because `LibraryDemo` contains the `main()` method.
+**Note:** Run `LibraryDemo.java`, not `Book.java` or `EBook.java`, because `LibraryDemo` contains the `main()` method.
 
 ---
 
-## 💻 Technologies Used
+# 4. Mobile Application – Multiple Inheritance
+
+## Description
+
+This program demonstrates **Multiple Inheritance using interfaces**.
+
+Java does not support multiple inheritance through classes. However, Java supports multiple inheritance through interfaces.
+
+In this example:
+
+* `GPS` is the first interface.
+* `Camera` is the second interface.
+* `MobileApp` implements both interfaces.
+
+### Structure
+
+```text
+      GPS          Camera
+       \             /
+        \           /
+          MobileApp
+```
+
+The `MobileApp` class receives functionality from both `GPS` and `Camera`.
+
+## Interfaces and Classes
+
+### GPS.java
+
+The `GPS` interface contains:
+
+```java
+void getLocation();
+```
+
+This method is used to get and display the current location.
+
+### Camera.java
+
+The `Camera` interface contains:
+
+```java
+void takePhoto();
+```
+
+This method is used to capture a photo.
+
+### MobileApp.java
+
+The `MobileApp` class implements both:
+
+```java
+implements GPS, Camera
+```
+
+It contains:
+
+* `appName`
+* `location`
+* `getLocation()`
+* `takePhoto()`
+* `displayAppDetails()`
+
+---
+
+# Technologies Used
 
 * Java
-* Object-Oriented Programming (OOP)
+* Object-Oriented Programming
 * Inheritance
+* Interfaces
+* Scanner for User Input
 
-## 🎯 Learning Objectives
+---
 
-Through these programs, we can understand:
+# Concepts Demonstrated
 
-* Single Inheritance
-* Hierarchical Inheritance
-* Multilevel Inheritance
-* Hybrid Inheritance
-* Parent and child classes
-* Code reusability
-* Creating and using objects
-* Methods and setters in Java
+## Single Inheritance
 
-## 📂 Repository Structure
+One child class inherits from one parent class.
+
+```text
+Parent
+  ↓
+Child
+```
+
+## Hierarchical Inheritance
+
+Multiple child classes inherit from the same parent class.
+
+```text
+       Parent
+       /    \
+   Child1  Child2
+```
+
+## Hybrid Inheritance
+
+A combination of different inheritance structures.
+
+## Multiple Inheritance using Interfaces
+
+A class implements multiple interfaces.
+
+```text
+Interface 1     Interface 2
+      \            /
+       \          /
+          Class
+```
+
+---
+
+# User Input
+
+All main programs use Java's `Scanner` class to take input from the user.
+
+Example:
+
+```java
+Scanner sc = new Scanner(System.in);
+
+System.out.print("Enter name: ");
+String name = sc.nextLine();
+```
+
+This makes the programs interactive instead of using fixed values.
+
+---
+
+# How to Compile and Run
+
+Open the terminal inside the required folder.
+
+For example:
+
+```bash
+cd 01_Single_Inheritance
+javac *.java
+java SchoolDemo
+```
+
+For the hospital program:
+
+```bash
+cd 02_Hierarchical_Inheritance
+javac *.java
+java HospitalDemo
+```
+
+For the library program:
+
+```bash
+cd 03_Hybrid_Inheritance
+javac *.java
+java LibraryDemo
+```
+# Learning Outcome
+
+These programs demonstrate how Java inheritance can be used to:
+
+* Reuse code from parent classes.
+* Create specialized child classes.
+* Organize related classes.
+* Implement different inheritance structures.
+* Use interfaces to achieve multiple inheritance.
+* Take dynamic input using `Scanner`.
+* Understand the basics of Object-Oriented Programming.
+
+---
+
+# Repository Structure
 
 ```text
 java-inheritance-situations/
 │
 ├── README.md
 │
-├── 01_Simple_Single_Inheritance/
+├── 01_Single_Inheritance/
 │   ├── Person.java
 │   ├── Student.java
 │   └── SchoolDemo.java
 │
-├── 06_Medium_Hierarchical_Inheritance/
+├── 02_Hierarchical_Inheritance/
 │   ├── Staff.java
 │   ├── Doctor.java
 │   ├── Nurse.java
 │   └── HospitalDemo.java
 │
-└── 05_High_Hybrid_Inheritance/
-    ├── LibraryItem.java
-    ├── Book.java
-    ├── Magazine.java
-    ├── EBook.java
-    └── LibraryDemo.java
+├── 03_Hybrid_Inheritance/
+   ├── LibraryItem.java
+   ├── Book.java
+   ├── Magazine.java
+   ├── EBook.java
+   └── LibraryDemo.java
+
 ```
 
-## 👩‍💻 Author
+# Author
 
 **Navya Sri**
