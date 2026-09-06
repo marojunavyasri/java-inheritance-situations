@@ -1,4 +1,4 @@
-# Java Inheritance Examples
+# Java Inheritance situations
 
 This repository contains Java programs that demonstrate different types of inheritance using real-world examples.
 
